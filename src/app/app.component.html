@@ -16,10 +16,10 @@
     </div>
 
     <div class="groupInput">
-      <div><input class="inputCalculette" /></div>
-      <div><input class="inputCalculette" /></div>
+      <div><input class="inputCalculette" type="text" /></div>
+      <div><input class="inputCalculette" id="inputdecalcul" [value]="inputValue" /></div>
       <div class="resultatCalcul">
-        <input class="inputCalculette" readonly />
+        <input class="inputCalculette" [value]="inputresultValue" readonly />
         <select class="selectCalculette">
           <option value="U">U</option>
           <option value="m3">m3</option>
@@ -32,72 +32,72 @@
   <div class="calculatrice">
     <div class="LigneCalculatrice">
       <div>
-        <button class="buttonCalculatrice buttonCalculatricesymbole">(</button>
+        <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="updateInput('(')">(</button>
       </div>
       <div>
-        <button class="buttonCalculatrice buttonCalculatricesymbole">)</button>
+        <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="updateInput(')')">)</button>
       </div>
       <div>
-        <button class="buttonCalculatrice buttonCalculatricesymbole">AC</button>
+        <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="clearcalcul()">AC</button>
       </div>
       <div>
-        <button class="buttonCalculatrice buttonCalculatricesymbole">÷</button>
-      </div>
-    </div>
-    <div class="LigneCalculatrice">
-      <div>
-        <button class="buttonCalculatrice buttonCalculatricechiffre">7</button>
-      </div>
-      <div>
-        <button class="buttonCalculatrice buttonCalculatricechiffre">8</button>
-      </div>
-      <div>
-        <button class="buttonCalculatrice buttonCalculatricechiffre">9</button>
-      </div>
-      <div>
-        <button class="buttonCalculatrice buttonCalculatricesymbole">x</button>
+        <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="updateInput('÷')">÷</button>
       </div>
     </div>
     <div class="LigneCalculatrice">
       <div>
-        <button class="buttonCalculatrice buttonCalculatricechiffre">4</button>
+        <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('7')">7</button>
       </div>
       <div>
-        <button class="buttonCalculatrice buttonCalculatricechiffre">5</button>
+        <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('8')">8</button>
       </div>
       <div>
-        <button class="buttonCalculatrice buttonCalculatricechiffre">6</button>
+        <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('9')">9</button>
       </div>
       <div>
-        <button class="buttonCalculatrice buttonCalculatricesymbole">-</button>
-      </div>
-    </div>
-    <div class="LigneCalculatrice">
-      <div>
-        <button class="buttonCalculatrice buttonCalculatricechiffre">1</button>
-      </div>
-      <div>
-        <button class="buttonCalculatrice buttonCalculatricechiffre">2</button>
-      </div>
-      <div>
-        <button class="buttonCalculatrice buttonCalculatricechiffre">3</button>
-      </div>
-      <div>
-        <button class="buttonCalculatrice buttonCalculatricesymbole">+</button>
+        <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="updateInput('*')">x</button>
       </div>
     </div>
     <div class="LigneCalculatrice">
       <div>
-        <button class="buttonCalculatrice buttonCalculatricechiffre">0</button>
+        <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('4')">4</button>
       </div>
       <div>
-        <button class="buttonCalculatrice buttonCalculatricesymbole">,</button>
+        <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('5')">5</button>
       </div>
       <div>
-        <button class="buttonCalculatrice buttonCalculatriceegale">=</button>
+        <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('6')">6</button>
       </div>
       <div>
-        <button class="buttonCalculatrice buttonCalculatriceentrer">entrer</button>
+        <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="updateInput('-')">-</button>
+      </div>
+    </div>
+    <div class="LigneCalculatrice">
+      <div>
+        <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('1')">1</button>
+      </div>
+      <div>
+        <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('2')">2</button>
+      </div>
+      <div>
+        <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('3')">3</button>
+      </div>
+      <div>
+        <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="updateInput('+')">+</button>
+      </div>
+    </div>
+    <div class="LigneCalculatrice">
+      <div>
+        <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('0')">0</button>
+      </div>
+      <div>
+        <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="updateInput(',')">,</button>
+      </div>
+      <div>
+        <button class="buttonCalculatrice buttonCalculatriceegale" (click)="calculateResult()">=</button>
+      </div>
+      <div>
+        <button class="buttonCalculatrice buttonCalculatriceentrer" (click)="enterData()">entrer</button>
       </div>
 
     </div>
