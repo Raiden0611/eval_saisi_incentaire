@@ -8,32 +8,40 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 
-<div>
-  <div class="buttonNav">
-    <button class="button">saisie</button>
-    <button class="button">inventaire</button>
-  </div>
-  <div class="groupInput">
-    <div><input /></div>
-    <div><input /></div>
-    <div class="resultatCalcul">
-      <div><input readonly /></div>
-      <div><button>U</button></div>
+<div class="calculette">
+  <div class="topCalculette">
+    <div class="buttonNav">
+      <button class="button">saisie</button>
+      <button class="button">inventaire</button>
+    </div>
+
+    <div class="groupInput">
+      <div><input class="inputCalculette" /></div>
+      <div><input class="inputCalculette" /></div>
+      <div class="resultatCalcul">
+        <input class="inputCalculette" readonly />
+        <select class="selectCalculette">
+          <option value="U">U</option>
+          <option value="m3">m3</option>
+          <option value="L">L</option>
+        </select>
+      </div>
     </div>
   </div>
+
   <div class="calculatrice">
     <div class="LigneCalculatrice">
       <div>
-        <button class="buttonCalculatrice">(</button>
+        <button class="buttonCalculatrice buttonCalculatricesymbole">(</button>
       </div>
       <div>
-        <button class="buttonCalculatrice">)</button>
+        <button class="buttonCalculatrice buttonCalculatricesymbole">)</button>
       </div>
       <div>
-        <button class="buttonCalculatrice">AC</button>
+        <button class="buttonCalculatrice buttonCalculatricesymbole">AC</button>
       </div>
       <div>
-        <button class="buttonCalculatrice">÷</button>
+        <button class="buttonCalculatrice buttonCalculatricesymbole">÷</button>
       </div>
     </div>
     <div class="LigneCalculatrice">
@@ -47,7 +55,7 @@
         <button class="buttonCalculatrice buttonCalculatricechiffre">9</button>
       </div>
       <div>
-        <button class="buttonCalculatrice">x</button>
+        <button class="buttonCalculatrice buttonCalculatricesymbole">x</button>
       </div>
     </div>
     <div class="LigneCalculatrice">
@@ -61,7 +69,7 @@
         <button class="buttonCalculatrice buttonCalculatricechiffre">6</button>
       </div>
       <div>
-        <button class="buttonCalculatrice buttonCalculatrice">-</button>
+        <button class="buttonCalculatrice buttonCalculatricesymbole">-</button>
       </div>
     </div>
     <div class="LigneCalculatrice">
@@ -75,7 +83,7 @@
         <button class="buttonCalculatrice buttonCalculatricechiffre">3</button>
       </div>
       <div>
-        <button class="buttonCalculatrice">+</button>
+        <button class="buttonCalculatrice buttonCalculatricesymbole">+</button>
       </div>
     </div>
     <div class="LigneCalculatrice">
@@ -83,7 +91,7 @@
         <button class="buttonCalculatrice buttonCalculatricechiffre">0</button>
       </div>
       <div>
-        <button class="buttonCalculatrice">,</button>
+        <button class="buttonCalculatrice buttonCalculatricesymbole">,</button>
       </div>
       <div>
         <button class="buttonCalculatrice buttonCalculatriceegale">=</button>
@@ -91,6 +99,7 @@
       <div>
         <button class="buttonCalculatrice buttonCalculatriceentrer">entrer</button>
       </div>
+
     </div>
   </div>
 </div>

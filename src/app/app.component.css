@@ -2,13 +2,54 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+
+.topCalculette {
+    width: 100%;
+    height: 100%;
+
 }
 
 .groupInput {
-    border: 2px solid #000;
     border-radius: 10px;
-    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
+
+.inputCalculette {
+    height: 30px;
+    width: 100%;
+    margin-top: 3px;
+    border-radius: 15px;
+    border: 4px solid #475569;
+    direction: rtl;
+}
+
+.selectCalculette {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    width: 20%;
+    margin-top: 3px;
+    border-radius: 15px;
+    text-align: center;
+    align-items: center;
+    margin-left: 15px;
+    margin-right: 0;
+    font-size: 18px;
+    border: 4px solid #475569;
+    background-color: #d4d4d4;
+
+}
+
+.resultatCalcul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 
 .buttonNav {
     display: flex;
@@ -18,30 +59,26 @@
 }
 
 .button {
-    background-color: #87CEEB;
+    background-color: #94a3b8;
     border: 2px solid #000;
     border-radius: 15px;
     width: 40%;
-    height: 35px;
+    height: 50px;
 }
 
 .button:hover {
-    background-color: #1E90FF;
+    background-color: #334155;
 }
 
 .button:active {
-    transform: translateY(2px);
-}
-
-.resultatCalcul {
-    display: flex;
-    flex-direction: row;
+    transform: translateY(4px);
 }
 
 .calculatrice {
     display: flex;
     flex-direction: column;
     padding: 10px;
+    width: 100%;
 }
 
 .LigneCalculatrice {
@@ -52,10 +89,15 @@
 }
 
 .buttonCalculatrice {
-    height: 50px;
-    width: 50px;
+    height: 75px;
+    width: 75px;
     border-radius: 15%;
+    font-weight: bold;
+    font-size: 16px;
+}
 
+.buttonCalculatrice:active {
+    transform: translateY(4px);
 }
 
 .buttonCalculatricechiffre {
@@ -64,17 +106,16 @@
 }
 
 .buttonCalculatriceegale {
-    height: 50px;
-    width: 50px;
-    border-radius: 20%;
     background-color: #da891f;
     color: #fff;
 }
 
 .buttonCalculatriceentrer {
-    height: 50px;
-    width: 50px;
-    border-radius: 20%;
-    background-color: #da1f1f;
+    background-color: #3f3f46;
+    color: #fff;
+}
+
+.buttonCalculatricesymbole {
+    background-color: #334155;
     color: #fff;
 }
