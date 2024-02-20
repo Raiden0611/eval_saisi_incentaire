@@ -1,0 +1,80 @@
+.calculette {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.groupInput {
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.buttonNav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 10px;
+}
+
+.button {
+    background-color: #87CEEB;
+    border: 2px solid #000;
+    border-radius: 15px;
+    width: 40%;
+    height: 35px;
+}
+
+.button:hover {
+    background-color: #1E90FF;
+}
+
+.button:active {
+    transform: translateY(2px);
+}
+
+.resultatCalcul {
+    display: flex;
+    flex-direction: row;
+}
+
+.calculatrice {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.LigneCalculatrice {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 2px;
+}
+
+.buttonCalculatrice {
+    height: 50px;
+    width: 50px;
+    border-radius: 15%;
+
+}
+
+.buttonCalculatricechiffre {
+    background-color: #696969;
+    color: #fff;
+}
+
+.buttonCalculatriceegale {
+    height: 50px;
+    width: 50px;
+    border-radius: 20%;
+    background-color: #da891f;
+    color: #fff;
+}
+
+.buttonCalculatriceentrer {
+    height: 50px;
+    width: 50px;
+    border-radius: 20%;
+    background-color: #da1f1f;
+    color: #fff;
+}
