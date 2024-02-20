@@ -27,6 +27,29 @@ export class AppComponent {
   selectedUnit: string = '';
   dataRows: any[] = [];
 
+  /* toggleSaisie() {
+    const calculetteElement = document.querySelector('.calculette');
+    const inventaireElement = document.querySelector('.inventaire');
+    if (calculetteElement && inventaireElement) {
+      calculetteElement.classList.remove('visible');
+      calculetteElement.classList.add('hidden');
+      inventaireElement.classList.remove('hidden');
+      inventaireElement.classList.add('visible');
+    }
+  }
+  
+  toggleInventaire() {
+    const calculetteElement = document.querySelector('.calculette');
+    const inventaireElement = document.querySelector('.inventaire');
+    if (calculetteElement && inventaireElement) {
+      calculetteElement.classList.remove('visible');
+      calculetteElement.classList.add('hidden');
+      inventaireElement.classList.remove('hidden');
+      inventaireElement.classList.add('visible');
+    }
+  } */
+
+
   updateInput(value: string) {
     this.inputValue += value; // Concatène la nouvelle valeur à la valeur existante
   }
@@ -71,6 +94,25 @@ export class AppComponent {
       alert('Erreur dans l\'enregistrement')
     }
 
+  }
+  modifinventaire() {
+
+  }
+
+  exportCSV() {
+    const csvContent = this.dataRows.map(row => Object.values(row).join(',')).join('\n');
+    const blob = new Blob([csvContent], { type: 'text/csv' });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', 'export.csv');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
+  }
+  importCSV() {
+    console.log("importation CSV en cours...")
   }
 }
 

@@ -1,134 +1,124 @@
 <div class="buttonNav">
-  <button class="button">saisie</button>
-  <button class="button">inventaire</button>
-</div>
-<div class="calculette">
-  <div class="topCalculette">
-
-
-    <div class="groupInput">
-      <div><input class="inputCalculette" [(ngModel)]="inputTitreInventaire" placeholder="Titre de l'inventaire" />
-      </div>
-
-
-      <div><input class="inputCalculette" [(ngModel)]="inputValue" placeholder="calcul" readonly /></div>
-
-
-      <div class="resultatCalcul">
-        <input class="inputCalculette" [(ngModel)]="inputresultValue" placeholder="résultat" readonly />
-        <!-- il faudrait que je rajoute un icones pour montrer qu'il est cliquable -->
-        <select class="selectCalculette" [(ngModel)]="selectedUnit">
-          <option value="U">u</option>
-          <option value="m3">m3</option>
-          <option value="ml">ml</option>
-          <option value="m²">m²</option>
-        </select>
-      </div>
-    </div>
-  </div>
-
-  <div class="calculatrice">
-    <div class="LigneCalculatrice">
-      <div>
-        <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="updateInput('(')">(</button>
-      </div>
-      <div>
-        <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="updateInput(')')">)</button>
-      </div>
-      <div>
-        <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="clearcalcul()">AC</button>
-      </div>
-      <div>
-        <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="clearOnecalcul()"> <- </button>
-      </div>
-      <div>
-        <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="updateInput('÷')">÷</button>
-      </div>
-    </div>
-    <div class="LigneCalculatrice">
-      <div>
-        <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('7')">7</button>
-      </div>
-      <div>
-        <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('8')">8</button>
-      </div>
-      <div>
-        <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('9')">9</button>
-      </div>
-      <div>
-        <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="updateInput('*')">x</button>
-      </div>
-    </div>
-    <div class="LigneCalculatrice">
-      <div>
-        <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('4')">4</button>
-      </div>
-      <div>
-        <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('5')">5</button>
-      </div>
-      <div>
-        <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('6')">6</button>
-      </div>
-      <div>
-        <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="updateInput('-')">-</button>
-      </div>
-    </div>
-    <div class="LigneCalculatrice">
-      <div>
-        <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('1')">1</button>
-      </div>
-      <div>
-        <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('2')">2</button>
-      </div>
-      <div>
-        <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('3')">3</button>
-      </div>
-      <div>
-        <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="updateInput('+')">+</button>
-      </div>
-    </div>
-    <div class="LigneCalculatrice">
-      <div>
-        <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('0')">0</button>
-      </div>
-      <div>
-        <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="updateInput('.')">,</button>
-      </div>
-      <div>
-        <button class="buttonCalculatrice buttonCalculatriceegale" (click)="calculateResult()">=</button>
-      </div>
-      <div>
-        <button class="buttonCalculatrice buttonCalculatriceentrer" (click)="enregistrement()">entrer</button>
-      </div>
-
-    </div>
-  </div>
+  <button class="button">saisie </button><!-- (click)="toggleSaisie()" -->
+  <button class="button">inventaire </button><!-- (click)="toggleInventaire()" -->
 </div>
 
-<div class="inventaire">
-  <div>
-    <table>
-      <thead>
-        <tr>
-          <th>Nom</th>
-          <th>Valeur</th>
-          <th>Unité</th>
-        </tr>
-      </thead>
-      <tbody class="tableau">
-        <tr *ngFor="let row of dataRows" class="ligneinventaire">
-          <td class="titreInventaire">{{ row.nom }}</td>
-          <td class="valeurInventaire">{{ row.valeur }}</td>
-          <td class="uniteInventaire">{{ row.unite }}</td>
-        </tr>
-      </tbody>
-    </table>
+<div class="page">
+  <div class="calculette">
+    <div class="topCalculette">
+
+
+      <div class="groupInput">
+        <div><input class="inputCalculette" [(ngModel)]="inputTitreInventaire" placeholder="Titre de l'inventaire" />
+        </div>
+
+
+        <div><input class="inputCalculette" [(ngModel)]="inputValue" placeholder="calcul" readonly /></div>
+
+
+        <div class="resultatCalcul">
+          <input class="inputCalculette" [(ngModel)]="inputresultValue" placeholder="résultat" readonly />
+          <!-- il faudrait que je rajoute un icones pour montrer qu'il est cliquable -->
+          <select class="selectCalculette" [(ngModel)]="selectedUnit">
+            <option value="U">u</option>
+            <option value="m3">m3</option>
+            <option value="ml">ml</option>
+            <option value="m²">m²</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="calculatrice">
+      <div class="LigneCalculatrice">
+        <div>
+          <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="updateInput('(')">(</button>
+        </div>
+        <div>
+          <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="updateInput(')')">)</button>
+        </div>
+        <div>
+          <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="clearcalcul()">AC</button>
+        </div>
+        <div>
+          <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="clearOnecalcul()"> <- </button>
+        </div>
+        <div>
+          <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="updateInput('÷')">÷</button>
+        </div>
+      </div>
+      <div class="LigneCalculatrice">
+        <div>
+          <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('7')">7</button>
+        </div>
+        <div>
+          <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('8')">8</button>
+        </div>
+        <div>
+          <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('9')">9</button>
+        </div>
+        <div>
+          <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="updateInput('*')">x</button>
+        </div>
+      </div>
+      <div class="LigneCalculatrice">
+        <div>
+          <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('4')">4</button>
+        </div>
+        <div>
+          <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('5')">5</button>
+        </div>
+        <div>
+          <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('6')">6</button>
+        </div>
+        <div>
+          <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="updateInput('-')">-</button>
+        </div>
+      </div>
+      <div class="LigneCalculatrice">
+        <div>
+          <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('1')">1</button>
+        </div>
+        <div>
+          <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('2')">2</button>
+        </div>
+        <div>
+          <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('3')">3</button>
+        </div>
+        <div>
+          <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="updateInput('+')">+</button>
+        </div>
+      </div>
+      <div class="LigneCalculatrice">
+        <div>
+          <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('0')">0</button>
+        </div>
+        <div>
+          <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="updateInput('.')">,</button>
+        </div>
+        <div>
+          <button class="buttonCalculatrice buttonCalculatriceegale" (click)="calculateResult()">=</button>
+        </div>
+        <div>
+          <button class="buttonCalculatrice buttonCalculatriceentrer" (click)="enregistrement()">entrer</button>
+        </div>
+
+      </div>
+    </div>
   </div>
-  <div>
-    <button>importer un csv</button>
-    <button>imprimer</button>
-    <button>enregistrer en csv</button>
+
+  <div class="inventaire">
+
+    <div *ngFor="let row of dataRows" class="ligneinventaire" (click)="modifinventaire()">
+      <label class="titreInventaire">{{ row.nom }}</label>
+      <label class="valeurInventaire">{{ row.valeur }}</label>
+      <label class="uniteInventaire">{{ row.unite }}</label>
+    </div>
+    <div class="buttonnavinventaire">
+      <button class="buttoninventaire" (click)="importCSV()">importer un csv</button>
+      <button class="buttoninventaire">imprimer</button>
+      <button class="buttoninventaire" (click)="exportCSV()">enregistrer en csv</button>
+    </div>
   </div>
 </div>
-
 <router-outlet></router-outlet>

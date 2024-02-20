@@ -1,3 +1,11 @@
+/* .visible {
+    display: flex;
+}
+
+.hidden {
+    display: none;
+} */
+
 .calculette {
     display: flex;
     align-items: center;
@@ -132,6 +140,8 @@
 table {
     border-collapse: collapse;
     border-spacing: 0;
+    width: 400px;
+    height: 20px;
 }
 
 thead th {
@@ -153,20 +163,134 @@ th {
     background-color: red;
     width: 100%;
     height: 100%;
-
-
 }
 
 .ligneinventaire {
-    border-radius: 20px;
-    font-size: 24px;
-    margin: 5px;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
 
+    font-size: 24px;
+    margin: 5px;
+    width: 400px;
+    background-color: #cbd5e1;
+    border: 2px solid #000;
+    border-radius: 13px;
+    padding: 5px;
 }
 
 .titreInventaire {}
 
-.valeurInventaire {}
+.valeurInventaire {
+    margin-left: auto;
+}
 
-.uniteInventaire {}
+.uniteInventaire {
+    margin-left: 10px;
+}
+
+.buttonnavinventaire {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 10px;
+
+}
+
+.buttoninventaire {
+    background-color: #94a3b8;
+    border: 2px solid #000;
+    border-radius: 15px;
+    width: 30%;
+    height: 50px;
+}
+
+.buttoninventaire:hover {
+    background-color: #334155;
+}
+
+.buttoninventaire:active {
+    transform: translateY(4px);
+}
+
+
+
+@media screen and (min-width: 1040px) {
+    .page {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .buttonNav {
+        display: none;
+    }
+
+    .inventaire,
+    .calculette {
+        width: 50%;
+    }
+
+    .inputCalculette {
+        height: 60px;
+        font-size: 26px;
+    }
+
+    .buttonCalculatrice {
+        height: 100px;
+        width: 100px;
+        font-size: 24px;
+    }
+
+    .buttoninventaire {
+        height: 100px;
+        width: 150px;
+        font-size: 24px;
+        margin: 8px;
+    }
+
+    .ligneinventaire {
+        font-size: 30px;
+        width: 498px;
+    }
+
+}
+
+@media screen and (min-width: 988px) {
+    .page {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .buttonNav {
+        display: none;
+    }
+
+    .inventaire,
+    .calculette {
+        width: 50%;
+    }
+
+    .inputCalculette {
+        height: 60px;
+        font-size: 22px;
+    }
+
+    .buttonCalculatrice {
+        height: 100px;
+        width: 100px;
+        font-size: 16px;
+    }
+
+    .buttoninventaire {
+        height: 50px;
+        width: 100px;
+        font-size: 16px;
+        margin: 8px;
+    }
+
+    .ligneinventaire {
+        font-size: 30px;
+        width: 325px;
+    }
+
+}
