@@ -3,14 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-// Désactive l'ouverture automatique du clavier virtuel pour les champs input et textarea
-/* document.addEventListener('DOMContentLoaded', function () {
-  var inputElements = document.querySelectorAll('input, textarea');
-  for (var i = 0; i < inputElements.length; i++) {
-    inputElements[i].setAttribute('readonly', 'readonly');
-  }
-}); */
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -62,6 +54,7 @@ export class AppComponent {
   }
 
   clearcalcul() { this.inputValue = ''; this.inputresultValue = ''; } // Supprime tout les caractères de inputValue
+
   clearOnecalcul() {
     this.inputValue = this.inputValue.slice(0, -1); // Supprime le dernier caractère de inputValue
   }
