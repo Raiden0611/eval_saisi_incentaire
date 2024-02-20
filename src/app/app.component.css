@@ -118,3 +118,55 @@
     background-color: #334155;
     color: #fff;
 }
+
+.inventaire {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+thead th {
+    font-weight: normal;
+}
+
+tbody,
+tr {
+    vertical-align: top;
+}
+
+td,
+th {
+    padding: 0;
+}
+
+
+.tableau {
+    background-color: red;
+    width: 100%;
+    height: 100%;
+
+
+}
+
+.ligneinventaire {
+    border-radius: 20px;
+    font-size: 24px;
+    margin: 5px;
+    justify-content: space-between;
+
+}
+
+.titreInventaire {}
+
+.valeurInventaire {}
+
+.uniteInventaire {}

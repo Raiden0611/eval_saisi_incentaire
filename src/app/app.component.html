@@ -1,29 +1,27 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
+<div class="buttonNav">
+  <button class="button">saisie</button>
+  <button class="button">inventaire</button>
+</div>
 <div class="calculette">
   <div class="topCalculette">
-    <div class="buttonNav">
-      <button class="button">saisie</button>
-      <button class="button">inventaire</button>
-    </div>
+
 
     <div class="groupInput">
-      <div><input class="inputCalculette" type="text" /></div>
-      <div><input class="inputCalculette" id="inputdecalcul" [value]="inputValue" /></div>
+      <div><input class="inputCalculette" [(ngModel)]="inputTitreInventaire" placeholder="Titre de l'inventaire" />
+      </div>
+
+
+      <div><input class="inputCalculette" [(ngModel)]="inputValue" placeholder="calcul" readonly /></div>
+
+
       <div class="resultatCalcul">
-        <input class="inputCalculette" [value]="inputresultValue" readonly />
-        <select class="selectCalculette">
-          <option value="U">U</option>
+        <input class="inputCalculette" [(ngModel)]="inputresultValue" placeholder="résultat" readonly />
+        <!-- il faudrait que je rajoute un icones pour montrer qu'il est cliquable -->
+        <select class="selectCalculette" [(ngModel)]="selectedUnit">
+          <option value="U">u</option>
           <option value="m3">m3</option>
-          <option value="L">L</option>
+          <option value="ml">ml</option>
+          <option value="m²">m²</option>
         </select>
       </div>
     </div>
@@ -39,6 +37,9 @@
       </div>
       <div>
         <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="clearcalcul()">AC</button>
+      </div>
+      <div>
+        <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="clearOnecalcul()"> <- </button>
       </div>
       <div>
         <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="updateInput('÷')">÷</button>
@@ -91,27 +92,43 @@
         <button class="buttonCalculatrice buttonCalculatricechiffre" (click)="updateInput('0')">0</button>
       </div>
       <div>
-        <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="updateInput(',')">,</button>
+        <button class="buttonCalculatrice buttonCalculatricesymbole" (click)="updateInput('.')">,</button>
       </div>
       <div>
         <button class="buttonCalculatrice buttonCalculatriceegale" (click)="calculateResult()">=</button>
       </div>
       <div>
-        <button class="buttonCalculatrice buttonCalculatriceentrer" (click)="enterData()">entrer</button>
+        <button class="buttonCalculatrice buttonCalculatriceentrer" (click)="enregistrement()">entrer</button>
       </div>
 
     </div>
   </div>
 </div>
 
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
+<div class="inventaire">
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Valeur</th>
+          <th>Unité</th>
+        </tr>
+      </thead>
+      <tbody class="tableau">
+        <tr *ngFor="let row of dataRows" class="ligneinventaire">
+          <td class="titreInventaire">{{ row.nom }}</td>
+          <td class="valeurInventaire">{{ row.valeur }}</td>
+          <td class="uniteInventaire">{{ row.unite }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <button>importer un csv</button>
+    <button>imprimer</button>
+    <button>enregistrer en csv</button>
+  </div>
+</div>
 
 <router-outlet></router-outlet>
