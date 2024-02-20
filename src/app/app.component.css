@@ -1,16 +1,25 @@
-/* .visible {
+.visible {
     display: flex;
 }
 
 .hidden {
     display: none;
-} */
+}
 
 .calculette {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+.inventaire {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
 }
 
 .topCalculette {
@@ -71,6 +80,8 @@
     border-radius: 15px;
     width: 40%;
     height: 50px;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .button:hover {
@@ -127,14 +138,7 @@
     color: #fff;
 }
 
-.inventaire {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-}
+
 
 
 table {
@@ -179,7 +183,9 @@ th {
     padding: 5px;
 }
 
-.titreInventaire {}
+.titreInventaire {
+    font-weight: bold;
+}
 
 .valeurInventaire {
     margin-left: auto;
@@ -228,6 +234,7 @@ th {
     .inventaire,
     .calculette {
         width: 50%;
+        display: flex;
     }
 
     .inputCalculette {
@@ -268,6 +275,7 @@ th {
     .inventaire,
     .calculette {
         width: 50%;
+        display: flex;
     }
 
     .inputCalculette {

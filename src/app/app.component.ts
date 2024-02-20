@@ -27,27 +27,23 @@ export class AppComponent {
   selectedUnit: string = '';
   dataRows: any[] = [];
 
-  /* toggleSaisie() {
-    const calculetteElement = document.querySelector('.calculette');
-    const inventaireElement = document.querySelector('.inventaire');
+  toggleSaisie() {
+    const calculetteElement = document.querySelector('.calculette') as HTMLElement;
+    const inventaireElement = document.querySelector('.inventaire') as HTMLElement;
     if (calculetteElement && inventaireElement) {
-      calculetteElement.classList.remove('visible');
-      calculetteElement.classList.add('hidden');
-      inventaireElement.classList.remove('hidden');
-      inventaireElement.classList.add('visible');
+      calculetteElement.style.display = 'flex';
+      inventaireElement.style.display = 'none';
     }
   }
-  
+
   toggleInventaire() {
-    const calculetteElement = document.querySelector('.calculette');
-    const inventaireElement = document.querySelector('.inventaire');
+    const calculetteElement = document.querySelector('.calculette') as HTMLElement;
+    const inventaireElement = document.querySelector('.inventaire') as HTMLElement;
     if (calculetteElement && inventaireElement) {
-      calculetteElement.classList.remove('visible');
-      calculetteElement.classList.add('hidden');
-      inventaireElement.classList.remove('hidden');
-      inventaireElement.classList.add('visible');
+      calculetteElement.style.display = 'none';
+      inventaireElement.style.display = 'flex';
     }
-  } */
+  }
 
 
   updateInput(value: string) {
